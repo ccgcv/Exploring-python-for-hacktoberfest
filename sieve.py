@@ -1,9 +1,9 @@
 N = 100000
-prime = [True for i in range(N+1)]
+prime = [True for i in range(N + 1)]
 p = 2
 while (p * p <= N):
     if (prime[p]):
-        for i in range(p * p, N+1, p):
+        for i in range(p * p, N + 1, p):
             prime[i] = False
     p += 1
 prime[1] = False

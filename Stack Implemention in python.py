@@ -1,40 +1,49 @@
 class Node:
-    def __init__(self,data):
-        self.data=data
-        self.next=None
+
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
 class Stack:
+
     def __init__(self):
-        self.top=None
-        self.stackSize=0
-    def push(self,data):
-        temp=Node(data)
+        self.top = None
+        self.stackSize = 0
+
+    def push(self, data):
+        temp = Node(data)
         if self.top is None:
-            self.top=temp
-            self.stackSize= self.stackSize+1
+            self.top = temp
+            self.stackSize = self.stackSize + 1
         else:
-            temp.next=self.top
-            self.top=temp
-            self.stackSize=self.stackSize+1
+            temp.next = self.top
+            self.top = temp
+            self.stackSize = self.stackSize + 1
+
     def pop(self):
         try:
             if self.top == None:
                 raise Exception("Stack is Empty")
             else:
-                temp=self.top
-                self.top=self.top.next
-                tempdata=temp.data
-                self.stackSize= self.stackSize-1
+                temp = self.top
+                self.top = self.top.next
+                tempdata = temp.data
+                self.stackSize = self.stackSize - 1
                 del temp
                 return tempdata
         except Exception as e:
             print(str(e))
+
     def isEmpty(self):
-        if self.stackSize==0:
+        if self.stackSize == 0:
             return True
         else:
             return False
+
     def size(self):
         return self.stackSize
+
     def top_element(self):
         try:
             if self.top == None:
@@ -43,7 +52,9 @@ class Stack:
                 return self.top.data
         except Exception as e:
             print(str(e))
-s=Stack()
+
+
+s = Stack()
 s.push(1)
 print(s.size())
 
